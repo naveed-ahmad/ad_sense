@@ -55,7 +55,7 @@ module AdSense
           options.merge! ad_type: ad_type, ad_format: ad_format
        
           adsense_opts = {
-              google_ad_client: AdSense.client_id,
+              google_ad_client: AdSense.ad_client_id,
               google_ad_slot:   options[:ad_slot],
               google_ad_width:  width,
               google_ad_height: height,
