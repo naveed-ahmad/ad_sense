@@ -1,0 +1,3 @@
+==========================================================
+AdSense is installed successfully! Please configure your AdSense client_id in config/initializers/google_ad_sense.rb file.
+==========================================================

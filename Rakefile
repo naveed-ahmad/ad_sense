@@ -14,12 +14,12 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "ad_secene"
-  gem.homepage = "http://github.com/naveed-ahmad/ad_secene"
+  gem.name = "ad_sense"
+  gem.homepage = "http://github.com/naveed-ahmad/ad_sense"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "naveed.ahmad@7vals.com"
+  gem.summary = %Q{Ruby wrapper for Google AdSense}
+  gem.description = %Q{A Ruby wrapper of Google AdSense for generating Ads, link ads, or search ads slots.}
+  gem.email = "naveedahmada036@gmail.com"
   gem.authors = ["Naveed Ahmad"]
   # dependencies defined in Gemfile
 end
