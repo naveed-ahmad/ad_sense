@@ -1,3 +1,4 @@
+require 'rails/generators'
 module AdSense
   module Generators
     class InstallGenerator < Rails::Generators::Base
