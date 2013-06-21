@@ -29,8 +29,8 @@ module AdSense
           content_tag :div, class: "search_ad_wrapper #{options[:wrapper_class]}" do
             [content_tag(:div, '', id: options[:add_container_id]),
              javascript_include_tag('http://www.google.com/adsense/search/ads.js'),
-             javascript_tag { script }].join('')
-          end.html_safe
+             javascript_tag { script }].join('').html_safe
+          end
         end
 
         def ad_link_tag(ad_slot, options = {})
@@ -82,8 +82,8 @@ module AdSense
         def generate_ad_tag(wrapper_class, adsense_opts)
           # based on http://www.adsense-generator.com/
           content_tag :div, class: wrapper_class do
-            [javascript_tag(adsense_opts), javascript_include_tag('http://pagead2.googlesyndication.com/pagead/show_ads.js')].join('')
-          end.html_safe
+            [javascript_tag(adsense_opts), javascript_include_tag('http://pagead2.googlesyndication.com/pagead/show_ads.js')].join('').html_safe
+          end
         end
       end
     end
