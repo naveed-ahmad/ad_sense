@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "ad_sense"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Naveed Ahmad"]
@@ -37,7 +37,6 @@ Gem::Specification.new do |s|
     "lib/generators/ad_sense/install/install_generator.rb",
     "lib/generators/ad_sense/install/templates/README",
     "lib/generators/ad_sense/install/templates/initializer.rb",
-    "lib/generators/ad_sense/install_generator.rb",
     "spec/ad_sense/ad_configuration_spec.rb",
     "spec/ad_sense/ad_format_spec.rb",
     "spec/spec_helper.rb"
