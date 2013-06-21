@@ -3,8 +3,8 @@ module AdSense
     module ActionView
       module Base
         def ad_slot_tag(ad_slot = nil, options = {})
-          adsense_opts  = get_ad_options_from_hash(options.merge(ad_slot: ad_slot), false)
-          wrapper_class = get_classes_for_ad_wrapper(adsense_opts)
+          adsense_opts  = get_ad_options_from_hash(options.merge!(ad_slot: ad_slot), false)
+          wrapper_class = get_classes_for_ad_wrapper(options)
           adsense_opts  = get_ad_script_from_hash(adsense_opts)
 
           generate_ad_tag wrapper_class, adsense_opts
@@ -45,12 +45,13 @@ module AdSense
         def get_ad_options_from_hash(options, is_links_ad)
           ad_format = options[:format] || AdSense.default_ad_format
           width, height = AdSense::AdFormat.get_dimension(ad_format)
-          wrapper_class = "google_adsense_slot #{options[:class]}"
 
           if options[:ad_slot].blank?
             add_type = options[:ad_type] || AdSense.default_ad_type
             ad_format_str = AdSense::AdFormat.ad_format_string(ad_format, is_links_ad)
           end
+          
+          options.merge! ad_type: ad_type, ad_format: ad_format
 
           adsense_opts = {
               google_ad_client: AdSense.client_id,
