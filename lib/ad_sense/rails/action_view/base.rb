@@ -45,14 +45,15 @@ module AdSense
         def get_ad_options_from_hash(options, is_links_ad)
           ad_format = options[:format] || AdSense.default_ad_format
           width, height = AdSense::AdFormat.get_dimension(ad_format)
+          ad_type = nil
 
           if options[:ad_slot].blank?
             add_type = options[:ad_type] || AdSense.default_ad_type
             ad_format_str = AdSense::AdFormat.ad_format_string(ad_format, is_links_ad)
           end
-          
+       
           options.merge! ad_type: ad_type, ad_format: ad_format
-
+       
           adsense_opts = {
               google_ad_client: AdSense.client_id,
               google_ad_slot:   options[:ad_slot],
