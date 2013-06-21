@@ -15,12 +15,12 @@ module AdSense
           script = <<-SCRIPT.strip_heredoc
                  var pageOptions = {
                    'pubId': '#{AdSense.search_ad_client_id}',
-                   'query': '#{AdSense.default_query_for_search_ad}',
+                   'query': '#{get_query_for_search_ad(options)}',
                    'hl': 'en'
                  };
 
                 var adblock1 = {
-                  'container': '#{add_container_id}',
+                  'container': '#{ad_container_id}',
                   'width': '#{options[:width]}'
                 };
                 new google.ads.search.Ads(pageOptions, adblock1);
@@ -42,6 +42,11 @@ module AdSense
         end
 
         protected
+       
+        def get_query_for_search_ad(options) 
+          options[:query] || AdSense.default_query_for_search_ad
+        end
+ 
         def get_ad_options_from_hash(options, is_links_ad)
           ad_format = options[:format] || AdSense.default_ad_format
           width, height = AdSense::AdFormat.get_dimension(ad_format)
