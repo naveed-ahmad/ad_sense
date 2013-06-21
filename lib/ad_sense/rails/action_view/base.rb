@@ -27,7 +27,7 @@ module AdSense
           SCRIPT
 
           content_tag :div, class: "search_ad_wrapper #{options[:wrapper_class]}" do
-            [content_tag(:div, '', id: options[:add_container_id]),
+            [content_tag(:div, '', id: ad_container_id),
              javascript_include_tag('http://www.google.com/adsense/search/ads.js'),
              javascript_tag { script }].join('').html_safe
           end
