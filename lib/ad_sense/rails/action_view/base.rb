@@ -10,7 +10,7 @@ module AdSense
           generate_ad_tag wrapper_class, adsense_opts
         end
 
-        def ad_search_tag(options)
+        def ad_search_tag(ad_container_id, options)
           # based on https://developers.google.com/custom-search-ads/docs/code-generator
           script = <<-SCRIPT.strip_heredoc
                  var pageOptions = {
@@ -20,8 +20,8 @@ module AdSense
                  };
 
                 var adblock1 = {
-                  'container': '#{options[:add_container_id]}',
-                  'width': '#{options[:add_container_width]}'
+                  'container': '#{add_container_id}',
+                  'width': '#{options[:width]}'
                 };
                 new google.ads.search.Ads(pageOptions, adblock1);
           SCRIPT
